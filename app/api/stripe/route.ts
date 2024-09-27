@@ -10,7 +10,7 @@ const settingsUrl = absoluteUrl("/settings");
 
 export async function GET() {
     try {
-        const {userId} = auth();
+        const { userId } = auth();
         const user = await currentUser();
 
         if (!userId || !user) {
@@ -60,7 +60,7 @@ export async function GET() {
             }
         });
 
-        return new NextResponse(JSON.stringify({url: stripeSession.url}));  
+        return new NextResponse(JSON.stringify({ url: stripeSession.url }));
 
     } catch (error) {
         console.log("[STRIPE_GET]", error);

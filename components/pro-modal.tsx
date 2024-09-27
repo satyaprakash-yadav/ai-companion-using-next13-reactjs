@@ -22,9 +22,8 @@ export const ProModal = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  
+    setIsMounted(true);
+  }, []);
 
   const onSubscribe = async () => {
     try {
@@ -33,7 +32,6 @@ export const ProModal = () => {
       const response = await axios.get("/api/stripe");
 
       window.location.href = response.data.url;
-
     } catch (error) {
       toast({
         variant: "destructive",
@@ -66,7 +64,9 @@ export const ProModal = () => {
             $9
             <span className="text-sm font-normal">.99 / mo</span>
           </p>
-          <Button disabled={loading} onClick={onSubscribe} variant="premium">Subscribe</Button>
+          <Button disabled={loading} onClick={onSubscribe} variant="premium">
+            Subscribe
+          </Button>
         </div>
       </DialogContent>
     </Dialog>

@@ -50,7 +50,7 @@ export async function POST(req: Request) {
             session.subscription as string
         );
 
-        await prismadb.userSubscription.create({
+        await prismadb.userSubscription.update({
             where: {
                 stripeSubscriptionId: subscription.id, 
             },
